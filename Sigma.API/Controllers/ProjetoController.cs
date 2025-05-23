@@ -1,8 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Sigma.Application.Dtos;
 using Sigma.Application.Interfaces;
 using Sigma.Domain.Dtos;
-using Sigma.Domain.Entities;
-using System.Diagnostics.Contracts;
 
 namespace Sigma.API.Controllers
 {
@@ -26,9 +25,17 @@ namespace Sigma.API.Controllers
 
         [HttpGet]
         [Route("get")]
-        public async Task<List<Projeto>> getAll() 
+        public async Task<IActionResult> GetAll() 
         {
-            return await _projetoService.getAll();
+            var projetos = await _projetoService.GetAll();
+            return Ok(projetos);
+        }
+
+        [HttpPost]
+        [Route("add")]
+        public async Task<IActionResult> Add([FromBody] ProjetoDto model) 
+        {
+            return new JsonResult(await _projetoService.Add(model));
         }
     }
 }

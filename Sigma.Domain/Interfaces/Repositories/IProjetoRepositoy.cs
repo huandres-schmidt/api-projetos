@@ -1,9 +1,5 @@
 ﻿using Sigma.Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Sigma.Domain.Enums;
 
 namespace Sigma.Domain.Interfaces.Repositories
 {
@@ -11,6 +7,12 @@ namespace Sigma.Domain.Interfaces.Repositories
     {
         Task<bool> Inserir(Projeto entidade);
 
-        Task<List<Projeto>> getAll();
+        Task<bool> Add(Projeto entidade);
+
+        Task<List<Projeto>> GetAll();
+
+        Task<Projeto> Find(String nome, StatusProjeto status);
+
+        Task<bool> Delete(Projeto entidade);
     }
 }

@@ -1,5 +1,6 @@
-﻿using Sigma.Domain.Dtos;
-using Sigma.Domain.Entities;
+﻿using Sigma.Application.Dtos;
+using Sigma.Domain.Dtos;
+using Sigma.Domain.Enums;
 
 namespace Sigma.Application.Interfaces
 {
@@ -7,7 +8,9 @@ namespace Sigma.Application.Interfaces
     {
         Task<bool> Inserir(ProjetoNovoDto model);
 
-        Task<List<Projeto>> getAll();
+        Task<List<ProjetoDto>> GetAll();
+
+        Task<bool> Add(ProjetoDto model);
 
     }
 }

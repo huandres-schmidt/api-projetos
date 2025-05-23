@@ -1,16 +1,16 @@
 ﻿using Sigma.Domain.Enums;
 
-namespace Sigma.Domain.Entities
+namespace Sigma.Application.Dtos
 {
-    public class Projeto
+    public class ProjetoDto
     {
-        public long Id { get; set; }
-        public string? Nome { get; set; }
+        public int Id { get; set; }
+        public string Nome { get; set; }
         public string? Descricao { get; set; }
         public DateTime DataInicio { get; set; }
         public DateTime PrevisaoTermino { get; set; }
-        public decimal OrcamentoTotal{ get; set; }
+        public decimal OrcamentoTotal { get; set; }
         public ClassificacaoRisco classificacao { get; set; }
-        public StatusProjeto Status { get; set; }
+        public StatusProjeto status{ get; set; }
     }
 }
